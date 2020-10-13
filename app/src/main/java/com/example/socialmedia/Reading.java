@@ -63,6 +63,7 @@ public class Reading extends AppCompatActivity {
 
     public void onClickPost(View view){
 
+
         Intent intent = new Intent(this,Post.class);
 
         startActivity(intent);
