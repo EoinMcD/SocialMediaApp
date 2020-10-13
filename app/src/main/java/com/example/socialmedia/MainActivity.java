@@ -9,6 +9,8 @@ import android.view.View;
 import com.google.firebase.auth.FirebaseAuth;
 import com.firebase.ui.auth.*;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mAuth = FirebaseAuth.getInstance();
+
+
         setContentView(R.layout.activity_main);
     }
     public void onClickSignIn(View view){
@@ -47,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("Sign in successful!\n" + "name = " + user.getDisplayName() + "\n" +
                         "email = " + user.getEmail() + "\n" +
                         "id = " + user.getUid());
+                Intent intent = new Intent(this,Reading.class);
+                startActivity(intent);
             }
             else{
                 if(response ==null) {
