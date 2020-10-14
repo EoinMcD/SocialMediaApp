@@ -38,15 +38,16 @@ public class Reading extends AppCompatActivity {
                                 //System.out.println(document.getData());
                                 String PostToShow = (document.getId()).toString();
                                 TextView textView = findViewById(R.id.textView2);
+                                textView.setText(PostToShow);
 
 
 
-                                CollectionReference Posts = db.collection("Posts");
+                                //CollectionReference Posts = db.collection("Posts");
                                     // [START fs_order_by_name_limit_query]
-                                 Query query = Posts.orderBy("date").limitToLast(5);
+                                // Query query = Posts.orderBy("date").limitToLast(5);
                                     // [END fs_order_by_name_limit_query]
 
-                                textView.setText(query.toString());
+                                //textView.setText(query.toString());
 
                             }
                         }
